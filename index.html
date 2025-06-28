@@ -14,13 +14,9 @@
       color: #000;
     }
     .info-block {
-      background: #f9f9f9;
-      border: 1px solid #eee;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      border-radius: 8px;
       max-width: 1200px;
       margin: 40px auto;
-      padding: 40px 30px;
+      padding: 40px 20px;
     }
     .info-container {
       display: flex;
@@ -37,6 +33,7 @@
       font-size: 26px;
       font-weight: 700;
       margin-bottom: 16px;
+      line-height: 1.3;
     }
     .info-left p {
       font-size: 16px;
@@ -54,7 +51,7 @@
       margin-top: 20px;
     }
     .info-right {
-      flex: 0 0 280px;
+      flex: 0 0 250px;
       text-align: center;
     }
     .info-right img {
@@ -68,6 +65,12 @@
       font-size: 15px;
       line-height: 1.5;
       color: #333;
+      text-align: left;
+      margin: 0;
+    }
+    .info-right strong {
+      display: block;
+      margin-bottom: 10px;
     }
     .arrow-down {
       font-size: 40px;
@@ -95,6 +98,7 @@
       width: 100%;
       padding: 40px 20px;
       margin: 0 auto;
+      flex-wrap: wrap;
     }
     .content {
       max-width: 600px;
@@ -156,7 +160,6 @@
       }
       .info-left, .info-right {
         text-align: center;
-        margin: 0;
       }
       .info-right img {
         width: 150px;
@@ -186,6 +189,10 @@
       }
       .btn {
         width: 100%;
+        max-width: 400px;
+      }
+      .info-right p {
+        text-align: center;
       }
     }
     @media (max-width: 480px) {
@@ -231,7 +238,7 @@
       </div>
       <div class="info-right">
         <img src="https://i.postimg.cc/63fH12JZ/image.png" alt="Ольга Плеханова">
-        <p><strong>Меня зовут Ольга Плеханова.</strong><br>
+        <p><strong>Меня зовут Ольга Плеханова.</strong>
         Я эксперт по фондовому рынку США с 8-летним опытом. С 2022 года нахожу для своих клиентов маршруты для свободного и безопасного движения капитала. Являюсь партнёром крупнейших международных брокеров, страховых и финтехкомпаний. Официальный представитель альянса компаний платёжных агентов.</p>
       </div>
     </div>
