@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Razmorozka</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -12,10 +12,6 @@
       padding: 0;
       background: #ffffff;
       color: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
     }
     .container {
       display: flex;
@@ -24,6 +20,7 @@
       max-width: 1200px;
       width: 100%;
       padding: 40px 20px;
+      margin: 0 auto;
     }
     .content {
       max-width: 600px;
@@ -78,6 +75,88 @@
       max-width: 100%;
       height: auto;
     }
+    .info-block {
+      background: #f8f8f8;
+      padding: 60px 20px;
+    }
+    .info-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .info-text {
+      flex: 1 1 600px;
+      margin-right: 40px;
+    }
+    .info-text h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .info-text p {
+      font-size: 18px;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+    .info-photo {
+      flex: 0 0 300px;
+      text-align: center;
+    }
+    .info-photo img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+    .info-photo p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    .arrow-down {
+      font-size: 40px;
+      text-align: center;
+      cursor: pointer;
+      margin: 30px 0;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(10px);
+      }
+      60% {
+        transform: translateY(5px);
+      }
+    }
+    .second-section {
+      background: #ffffff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .second-section img {
+      width: 150px;
+      border-radius: 50%;
+      margin-top: 20px;
+    }
+    .second-section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .second-section p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto 20px;
+      line-height: 1.5;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
     @media (max-width: 1024px) {
       .container {
         flex-direction: column;
@@ -85,6 +164,18 @@
       }
       .illustration {
         margin-top: 40px;
+      }
+      .info-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .info-text, .info-photo {
+        margin: 0;
+        text-align: center;
+      }
+      .info-photo img {
+        width: 150px;
+        height: 150px;
       }
     }
   </style>
@@ -108,15 +199,45 @@
         успешно выводят средства на <span class="green-text">счета в ЕС</span>
       </div>
 
-     <a class="btn" href="https://t.me/+PZC7ITpF6AY5ZmY0">
-  ПОЛУЧИТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ<br>В НАШЕМ ТГ-КАНАЛЕ</a>
+      <a class="btn" href="https://t.me/+PZC7ITpF6AY5ZmY0">
+        ПОЛУЧИТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ<br>В НАШЕМ ТГ-КАНАЛЕ
+      </a>
     </div>
 
     <div class="illustration">
       <a href="https://t.me/razmorozkacom">
-        <img src="https://iimg.su/s/11/66otlTOYrr7EObz0IcnwjcNLUd9Xsu0H59TPq4kR.png" alt="Иллюстрация">
+        <img src="https://iimg.su/s/11/66otlTOYrr7EObz0IcnwjcNLUd9Xsu0H59TPq4kR.png" alt="Иллюстрация" />
       </a>
     </div>
   </div>
+
+  <!-- Новый блок -->
+  <section class="info-block">
+    <div class="info-container">
+      <div class="info-text">
+        <h2>Последние новости о санкциях и блокировках<br>
+            Изменения в практике разморозки<br>
+            Кейсы реальных клиентов</h2>
+        <p>Верните доступ к своим активам из Euroclear — законно и с гарантией результата</p>
+        <p>С 2023 года мы успешно сопровождаем клиентов в процедуре получения лицензий на разморозку активов, заблокированных в Euroclear и других европейских финансовых структурах. Более 100 лицензий уже выданы нашим клиентам, а средства — выведены на счета в ЕС.</p>
+        <p style="font-weight: 600; margin-top: 20px; font-size: 18px;">📄 Никакой воды. Только суть, инструкции и примеры — в нашем Telegram.</p>
+      </div>
+      <div class="info-photo">
+        <img src="https://i.postimg.cc/63fH12JZ/image.png" alt="Ольга Плеханова">
+        <p><strong>Меня зовут Ольга Плеханова.</strong><br>Я эксперт по фондовому рынку США с 8-летним опытом. С 2022 года нахожусь для своих клиентов маршруты для свободного и безопасного движения капитала. Являюсь партнёром крупнейших международных брокеров, страховых и финтехкомпаний. Официальный представитель альянса компаний платёжных агентов.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Стрелочка -->
+  <div class="arrow-down">
+    <a href="#second-section" style="text-decoration: none; color: #31C100;">↓</a>
+  </div>
+
+  <!-- Второй блок -->
+  <section id="second-section" class="second-section">
+    <h2>Дополнительный блок или контент</h2>
+    <p>Здесь может быть ваш текст или призыв к действию.</p>
+  </section>
 </body>
 </html>
