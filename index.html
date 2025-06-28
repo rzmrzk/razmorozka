@@ -13,6 +13,80 @@
       background: #ffffff;
       color: #000;
     }
+    .info-block {
+      background: #f9f9f9;
+      border: 1px solid #eee;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 40px 30px;
+    }
+    .info-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .info-left {
+      flex: 1 1 600px;
+      min-width: 300px;
+    }
+    .info-left h2 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .info-left p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .info-left .small-text {
+      font-size: 15px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    .telegram-note {
+      font-weight: 600;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    .info-right {
+      flex: 0 0 280px;
+      text-align: center;
+    }
+    .info-right img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+    .info-right p {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #333;
+    }
+    .arrow-down {
+      font-size: 40px;
+      text-align: center;
+      cursor: pointer;
+      margin: 30px 0;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(10px);
+      }
+      60% {
+        transform: translateY(5px);
+      }
+    }
     .container {
       display: flex;
       justify-content: space-between;
@@ -75,88 +149,34 @@
       max-width: 100%;
       height: auto;
     }
-    .info-block {
-      background: #f8f8f8;
-      padding: 60px 20px;
-    }
-    .info-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-    }
-    .info-text {
-      flex: 1 1 600px;
-      margin-right: 40px;
-    }
-    .info-text h2 {
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-    .info-text p {
-      font-size: 18px;
-      margin-bottom: 15px;
-      line-height: 1.5;
-    }
-    .info-photo {
-      flex: 0 0 300px;
-      text-align: center;
-    }
-    .info-photo img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 15px;
-    }
-    .info-photo p {
-      font-size: 16px;
-      line-height: 1.5;
-    }
-    .arrow-down {
-      font-size: 40px;
-      text-align: center;
-      cursor: pointer;
-      margin: 30px 0;
-      animation: bounce 2s infinite;
-    }
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-      }
-      40% {
-        transform: translateY(10px);
-      }
-      60% {
-        transform: translateY(5px);
-      }
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    /* Адаптив для мобильных */
     @media (max-width: 1024px) {
+      .info-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .info-left, .info-right {
+        text-align: center;
+        margin: 0;
+      }
+      .info-right img {
+        width: 150px;
+        height: 150px;
+      }
+      .info-left h2 {
+        font-size: 22px;
+      }
+      .info-left p {
+        font-size: 14px;
+      }
+      .telegram-note {
+        font-size: 14px;
+      }
       .container {
         flex-direction: column;
         text-align: center;
       }
       .illustration {
         margin-top: 40px;
-      }
-      .info-container {
-        flex-direction: column;
-        align-items: center;
-      }
-      .info-text, .info-photo {
-        margin: 0;
-        text-align: center;
-      }
-      .info-photo img {
-        width: 150px;
-        height: 150px;
       }
       .main-text {
         font-size: 30px;
@@ -166,21 +186,20 @@
       }
       .btn {
         width: 100%;
-        font-size: 16px;
       }
     }
     @media (max-width: 480px) {
       .main-text {
         font-size: 24px;
       }
-      .info-text h2 {
-        font-size: 22px;
+      .info-left h2 {
+        font-size: 20px;
       }
-      .info-text p {
-        font-size: 16px;
-      }
-      .info-photo p {
+      .info-left p {
         font-size: 14px;
+      }
+      .telegram-note {
+        font-size: 13px;
       }
       .btn {
         font-size: 14px;
@@ -191,30 +210,39 @@
 </head>
 <body>
 
-  <!-- Блок с Ольгой -->
+  <!-- Блок 1 - Ольга -->
   <section class="info-block">
     <div class="info-container">
-      <div class="info-text">
-        <h2>Последние новости о санкциях и блокировках<br>
-            Изменения в практике разморозки<br>
-            Кейсы реальных клиентов</h2>
-        <p>Верните доступ к своим активам из Euroclear — законно и с гарантией результата</p>
-        <p>С 2023 года мы успешно сопровождаем клиентов в процедуре получения лицензий на разморозку активов, заблокированных в Euroclear и других европейских финансовых структурах. Более 100 лицензий уже выданы нашим клиентам, а средства — выведены на счета в ЕС.</p>
-        <p style="font-weight: 600; margin-top: 20px; font-size: 18px;">📄 Никакой воды. Только суть, инструкции и примеры — в нашем Telegram.</p>
+      <div class="info-left">
+        <h2>
+          Последние новости о санкциях и блокировках<br>
+          Изменения в практике разморозки<br>
+          Кейсы реальных клиентов
+        </h2>
+        <p class="small-text">
+          Верните доступ к своим активам из Euroclear — законно и с гарантией результата
+        </p>
+        <p>
+          С 2023 года мы успешно сопровождаем клиентов в процедуре получения лицензий на разморозку активов, заблокированных в Euroclear и других европейских финансовых структурах. Более 100 лицензий уже выданы нашим клиентам, а средства — выведены на счета в ЕС.
+        </p>
+        <div class="telegram-note">
+          📄 <span>Никакой воды. Только суть, инструкции и примеры — в нашем Telegram.</span>
+        </div>
       </div>
-      <div class="info-photo">
+      <div class="info-right">
         <img src="https://i.postimg.cc/63fH12JZ/image.png" alt="Ольга Плеханова">
-        <p><strong>Меня зовут Ольга Плеханова.</strong><br>Я эксперт по фондовому рынку США с 8-летним опытом. С 2022 года нахожу для своих клиентов маршруты для свободного и безопасного движения капитала. Являюсь партнёром крупнейших международных брокеров, страховых и финтехкомпаний. Официальный представитель альянса компаний платёжных агентов.</p>
+        <p><strong>Меня зовут Ольга Плеханова.</strong><br>
+        Я эксперт по фондовому рынку США с 8-летним опытом. С 2022 года нахожу для своих клиентов маршруты для свободного и безопасного движения капитала. Являюсь партнёром крупнейших международных брокеров, страховых и финтехкомпаний. Официальный представитель альянса компаний платёжных агентов.</p>
       </div>
     </div>
   </section>
 
-  <!-- Стрелочка -->
+  <!-- Блок 2 - Стрелочка -->
   <div class="arrow-down">
     <a href="#hero-section" style="text-decoration: none; color: #31C100;">↓</a>
   </div>
 
-  <!-- Hero Section -->
+  <!-- Блок 3 - Верните свои активы -->
   <div class="container" id="hero-section">
     <div class="content">
       <header>
