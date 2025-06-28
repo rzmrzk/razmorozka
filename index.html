@@ -13,8 +13,7 @@
       background: #ffffff;
       color: #000;
     }
-    /* --------------------------- */
-    /* Блок 1 - Ольга */
+    /* ---------- БЛОК ОЛЬГИ ---------- */
     .info-block {
       max-width: 1200px;
       margin: 40px auto;
@@ -24,8 +23,8 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      gap: 40px;
       flex-wrap: wrap;
+      gap: 40px;
     }
     .info-left {
       flex: 1 1 600px;
@@ -33,9 +32,6 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-    }
-    .info-left-top {
-      /* верхняя часть - заголовок */
     }
     .info-left-bottom {
       margin-top: 60px;
@@ -84,8 +80,7 @@
       display: block;
       margin-bottom: 10px;
     }
-    /* --------------------------- */
-    /* Блок 2 - стрелочка */
+    /* ---------- СТРЕЛОЧКА ---------- */
     .arrow-down {
       font-size: 40px;
       text-align: center;
@@ -105,8 +100,11 @@
         transform: translateY(5px);
       }
     }
-    /* --------------------------- */
-    /* Блок 3 - Hero-блок */
+    /* ---------- СПЕЙСЕР ---------- */
+    .spacer {
+      height: 300px;
+    }
+    /* ---------- HERO-БЛОК ---------- */
     .container {
       display: flex;
       justify-content: space-between;
@@ -170,8 +168,7 @@
       max-width: 100%;
       height: auto;
     }
-    /* --------------------------- */
-    /* Мобильная адаптация */
+    /* ---------- МОБИЛЬНАЯ АДАПТАЦИЯ ---------- */
     @media (max-width: 1024px) {
       .info-container {
         flex-direction: column;
@@ -231,7 +228,7 @@
 </head>
 <body>
 
-  <!-- Блок 1 - Ольга -->
+  <!-- БЛОК 1 - ОЛЬГА -->
   <section class="info-block">
     <div class="info-container">
       <div class="info-left">
@@ -262,12 +259,15 @@
     </div>
   </section>
 
-  <!-- Блок 2 - стрелочка -->
+  <!-- БЛОК 2 - СТРЕЛОЧКА -->
   <div class="arrow-down">
     <a href="#hero-section" style="text-decoration: none;">↓</a>
   </div>
 
-  <!-- Блок 3 - Hero-блок -->
+  <!-- СПЕЙСЕР -->
+  <div class="spacer"></div>
+
+  <!-- БЛОК 3 - HERO -->
   <div class="container" id="hero-section">
     <div class="content">
       <header>
@@ -300,3 +300,4 @@
 
 </body>
 </html>
+
