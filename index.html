@@ -13,7 +13,6 @@
       background: #ffffff;
       color: #000;
     }
-    /* Блок Ольги */
     .info-block {
       background: #f9f9f9;
       border: 1px solid #eee;
@@ -70,7 +69,6 @@
       line-height: 1.5;
       color: #333;
     }
-    /* Стрелочка */
     .arrow-down {
       font-size: 40px;
       text-align: center;
@@ -89,7 +87,6 @@
         transform: translateY(5px);
       }
     }
-    /* Hero-блок */
     .container {
       display: flex;
       justify-content: space-between;
@@ -152,21 +149,17 @@
       max-width: 100%;
       height: auto;
     }
-    /* Адаптив */
+    /* Только центрирование на мобилке */
     @media (max-width: 768px) {
-      .info-block {
-        text-align: center;
-        padding: 30px 15px;
-      }
       .info-container {
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         text-align: center;
       }
       .info-left, .info-right {
         width: 100%;
         margin: 0 auto;
+        text-align: center;
       }
       .info-left h2,
       .info-left p,
@@ -174,12 +167,12 @@
         text-align: center;
       }
       .info-right img {
-        width: 140px;
-        height: 140px;
+        width: 150px;
+        height: 150px;
         margin: 20px auto;
       }
       .info-left h2 {
-        font-size: 20px;
+        font-size: 22px;
         line-height: 1.3;
       }
       .info-left p {
@@ -188,7 +181,6 @@
       }
       .telegram-note {
         font-size: 14px;
-        display: inline-block;
         margin-top: 15px;
       }
       .arrow-down {
@@ -283,4 +275,3 @@
 
 </body>
 </html>
-
