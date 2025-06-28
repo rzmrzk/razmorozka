@@ -25,7 +25,7 @@
     .info-container {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: center;
       flex-wrap: wrap;
       gap: 40px;
     }
@@ -70,10 +70,14 @@
       color: #333;
     }
     .arrow-down {
-      font-size: 40px;
       text-align: center;
-      cursor: pointer;
       margin: 30px 0;
+    }
+    .arrow-down a {
+      font-size: 40px;
+      color: #31C100;
+      text-decoration: none;
+      display: inline-block;
       animation: bounce 2s infinite;
     }
     @keyframes bounce {
@@ -98,6 +102,7 @@
     }
     .content {
       max-width: 600px;
+      text-align: center;
     }
     header img {
       height: 30px;
@@ -121,12 +126,10 @@
       font-weight: 700;
       margin: 20px 0;
       line-height: 1.2;
-      text-align: center;
     }
     .sub-text {
       font-size: 20px;
       margin: 20px 0;
-      text-align: center;
     }
     .green-text {
       color: #31C100;
@@ -167,7 +170,6 @@
         width: 100%;
         max-width: 90%;
         margin: 0 auto;
-        text-align: center;
       }
       .info-left h2 {
         font-size: 20px;
@@ -191,9 +193,8 @@
         font-size: 14px;
         line-height: 1.4;
       }
-      .arrow-down {
+      .arrow-down a {
         font-size: 36px;
-        margin: 20px 0;
       }
       .container {
         flex-direction: column;
@@ -202,10 +203,6 @@
       .content {
         max-width: 100%;
         padding: 0 15px;
-      }
-      .tagline {
-        font-size: 12px;
-        padding: 4px 12px;
       }
       .main-text {
         font-size: 26px;
@@ -230,6 +227,11 @@
   <!-- Блок 1 - Ольга -->
   <section class="info-block">
     <div class="info-container">
+      <div class="info-right">
+        <img src="https://i.postimg.cc/63fH12JZ/image.png" alt="Ольга Плеханова">
+        <p><strong>Меня зовут Ольга Плеханова.</strong><br>
+        Я эксперт по фондовому рынку США с 8-летним опытом. С 2022 года нахожу для своих клиентов маршруты для свободного и безопасного движения капитала. Являюсь партнёром крупнейших международных брокеров, страховых и финтехкомпаний. Официальный представитель альянса компаний платёжных агентов.</p>
+      </div>
       <div class="info-left">
         <h2>
           Последние новости о санкциях и блокировках<br>
@@ -246,17 +248,12 @@
           📄 <span>Никакой воды. Только суть, инструкции и примеры — в нашем Telegram.</span>
         </div>
       </div>
-      <div class="info-right">
-        <img src="https://i.postimg.cc/63fH12JZ/image.png" alt="Ольга Плеханова">
-        <p><strong>Меня зовут Ольга Плеханова.</strong><br>
-        Я эксперт по фондовому рынку США с 8-летним опытом. С 2022 года нахожу для своих клиентов маршруты для свободного и безопасного движения капитала. Являюсь партнёром крупнейших международных брокеров, страховых и финтехкомпаний. Официальный представитель альянса компаний платёжных агентов.</p>
-      </div>
     </div>
   </section>
 
   <!-- Блок 2 - Стрелочка -->
   <div class="arrow-down">
-    <a href="#hero-section" style="text-decoration: none; color: #31C100;">↓</a>
+    <a href="#hero-section">↓</a>
   </div>
 
   <!-- Блок 3 - Верните свои активы -->
