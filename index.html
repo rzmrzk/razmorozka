@@ -13,6 +13,8 @@
       background: #ffffff;
       color: #000;
     }
+    /* --------------------------- */
+    /* Блок 1 - Ольга */
     .info-block {
       max-width: 1200px;
       margin: 40px auto;
@@ -22,12 +24,21 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      flex-wrap: wrap;
       gap: 40px;
+      flex-wrap: wrap;
     }
     .info-left {
       flex: 1 1 600px;
       min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .info-left-top {
+      /* верхняя часть - заголовок */
+    }
+    .info-left-bottom {
+      margin-top: 60px;
     }
     .info-left h2 {
       font-size: 26px;
@@ -51,7 +62,7 @@
       margin-top: 20px;
     }
     .info-right {
-      flex: 0 0 250px;
+      flex: 0 0 350px;
       text-align: center;
     }
     .info-right img {
@@ -66,18 +77,22 @@
       line-height: 1.5;
       color: #333;
       text-align: left;
-      margin: 0;
+      margin: 0 auto;
+      max-width: 320px;
     }
     .info-right strong {
       display: block;
       margin-bottom: 10px;
     }
+    /* --------------------------- */
+    /* Блок 2 - стрелочка */
     .arrow-down {
       font-size: 40px;
       text-align: center;
       cursor: pointer;
       margin: 30px 0;
       animation: bounce 2s infinite;
+      color: #31C100;
     }
     @keyframes bounce {
       0%, 20%, 50%, 80%, 100% {
@@ -90,6 +105,8 @@
         transform: translateY(5px);
       }
     }
+    /* --------------------------- */
+    /* Блок 3 - Hero-блок */
     .container {
       display: flex;
       justify-content: space-between;
@@ -153,6 +170,8 @@
       max-width: 100%;
       height: auto;
     }
+    /* --------------------------- */
+    /* Мобильная адаптация */
     @media (max-width: 1024px) {
       .info-container {
         flex-direction: column;
@@ -161,18 +180,16 @@
       .info-left, .info-right {
         text-align: center;
       }
+      .info-left-bottom {
+        margin-top: 30px;
+      }
       .info-right img {
         width: 150px;
         height: 150px;
       }
-      .info-left h2 {
-        font-size: 22px;
-      }
-      .info-left p {
-        font-size: 14px;
-      }
-      .telegram-note {
-        font-size: 14px;
+      .info-right p {
+        max-width: 100%;
+        text-align: center;
       }
       .container {
         flex-direction: column;
@@ -190,9 +207,6 @@
       .btn {
         width: 100%;
         max-width: 400px;
-      }
-      .info-right p {
-        text-align: center;
       }
     }
     @media (max-width: 480px) {
@@ -221,19 +235,23 @@
   <section class="info-block">
     <div class="info-container">
       <div class="info-left">
-        <h2>
-          Последние новости о санкциях и блокировках<br>
-          Изменения в практике разморозки<br>
-          Кейсы реальных клиентов
-        </h2>
-        <p class="small-text">
-          Верните доступ к своим активам из Euroclear — законно и с гарантией результата
-        </p>
-        <p>
-          С 2023 года мы успешно сопровождаем клиентов в процедуре получения лицензий на разморозку активов, заблокированных в Euroclear и других европейских финансовых структурах. Более 100 лицензий уже выданы нашим клиентам, а средства — выведены на счета в ЕС.
-        </p>
-        <div class="telegram-note">
-          📄 <span>Никакой воды. Только суть, инструкции и примеры — в нашем Telegram.</span>
+        <div class="info-left-top">
+          <h2>
+            Последние новости о санкциях и блокировках<br>
+            Изменения в практике разморозки<br>
+            Кейсы реальных клиентов
+          </h2>
+          <p class="small-text">
+            Верните доступ к своим активам из Euroclear — законно и с гарантией результата
+          </p>
+        </div>
+        <div class="info-left-bottom">
+          <p>
+            С 2023 года мы успешно сопровождаем клиентов в процедуре получения лицензий на разморозку активов, заблокированных в Euroclear и других европейских финансовых структурах. Более 100 лицензий уже выданы нашим клиентам, а средства — выведены на счета в ЕС.
+          </p>
+          <div class="telegram-note">
+            📄 <span>Никакой воды. Только суть, инструкции и примеры — в нашем Telegram.</span>
+          </div>
         </div>
       </div>
       <div class="info-right">
@@ -244,12 +262,12 @@
     </div>
   </section>
 
-  <!-- Блок 2 - Стрелочка -->
+  <!-- Блок 2 - стрелочка -->
   <div class="arrow-down">
-    <a href="#hero-section" style="text-decoration: none; color: #31C100;">↓</a>
+    <a href="#hero-section" style="text-decoration: none;">↓</a>
   </div>
 
-  <!-- Блок 3 - Верните свои активы -->
+  <!-- Блок 3 - Hero-блок -->
   <div class="container" id="hero-section">
     <div class="content">
       <header>
