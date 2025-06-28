@@ -92,19 +92,16 @@
       }
     }
     .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 1200px;
-      width: 100%;
-      padding: 40px 20px;
-      margin: 0 auto;
       gap: 40px;
     }
-    .content {
+    .hero-text {
       max-width: 600px;
-      text-align: center;
-      margin: 0 auto;
     }
     header img {
       height: 30px;
@@ -128,10 +125,12 @@
       font-weight: 700;
       margin: 20px 0;
       line-height: 1.2;
+      text-align: center;
     }
     .sub-text {
       font-size: 20px;
       margin: 20px 0;
+      text-align: center;
     }
     .green-text {
       color: #31C100;
@@ -161,6 +160,7 @@
       display: block;
       margin: 0 auto;
     }
+
     /* Мобильная адаптация */
     @media (max-width: 768px) {
       .info-container {
@@ -189,7 +189,6 @@
       .info-right img {
         width: 140px;
         height: 140px;
-        margin: 15px auto;
       }
       .info-right p {
         font-size: 14px;
@@ -205,10 +204,9 @@
         margin: 0 auto;
         padding: 20px;
       }
-      .content {
-        max-width: 90%;
+      .hero-text {
+        max-width: 300px;
         margin: 0 auto;
-        text-align: center;
       }
       .main-text {
         font-size: 26px;
@@ -235,7 +233,7 @@
 </head>
 <body>
 
-  <!-- Блок 1 - Ольга -->
+  <!-- Блок 1 -->
   <section class="info-block">
     <div class="info-container">
       <div class="info-right">
@@ -262,14 +260,14 @@
     </div>
   </section>
 
-  <!-- Блок 2 - Стрелочка -->
+  <!-- Блок 2 -->
   <div class="arrow-down">
     <a href="#hero-section">↓</a>
   </div>
 
-  <!-- Блок 3 - Верните свои активы -->
+  <!-- Блок 3 -->
   <div class="container" id="hero-section">
-    <div class="content">
+    <div class="hero-text">
       <header>
         <a href="#"><img src="https://iimg.su/s/11/hULEtiprhiiIJGZx5Fv9ODJHK6vGYU00gQVC1WOK.png" alt="Razmorozka logo"></a>
       </header>
