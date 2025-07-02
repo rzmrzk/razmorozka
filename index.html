@@ -15,19 +15,23 @@
       font-size: 16px;
     }
     header {
-      padding: 40px 20px;
+      background: #ffffff;
+      padding: 40px 20px 10px;
       text-align: center;
     }
-    header img {
-      max-width: 220px;
-      height: auto;
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+      font-weight: 700;
+      color: #28a745;
+      letter-spacing: 1px;
     }
     .hero {
       background: linear-gradient(180deg, #f3fff3 0%, #ffffff 100%);
       text-align: center;
       padding: 60px 20px 40px;
     }
-    .hero h1 {
+    .hero h2 {
       font-size: 40px;
       font-weight: 700;
       color: #28a745;
@@ -123,7 +127,10 @@
       font-size: 14px;
     }
     @media (max-width: 768px) {
-      .hero h1 {
+      header h1 {
+        font-size: 24px;
+      }
+      .hero h2 {
         font-size: 28px;
       }
       .section h2 {
@@ -157,11 +164,11 @@
 <body>
 
 <header>
-  <img src="https://i.postimg.cc/63fH12JZ/image.png" alt="Razmorozka Logo" />
+  <h1>Razmorozka</h1>
 </header>
 
 <section class="hero">
-  <h1>Верните свои активы из Euroclear</h1>
+  <h2>Верните свои активы из Euroclear</h2>
   <p>Мы помогаем вернуть доступ к активам в Euroclear законно и официально. Все <span style="color:#28a745; font-weight:600;">актуальные кейсы</span>, инструкции и свежие новости доступны в нашем Telegram-канале.</p>
   <a href="https://t.me/razmorozkacom" class="btn">ПОЛУЧИТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ</a>
 </section>
@@ -201,7 +208,7 @@
 
 <section class="hero" style="padding: 40px 20px;">
   <p style="margin-bottom: 20px; font-size: 18px;">В Telegram вы найдете пошаговые инструкции и реальные истории возврата активов.</p>
-  <a href="https://t.me/razmorozkacom" class="btn">ПОЛУЧИТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ</a>
+  <a href="https://t.me/razmorozkacom" class="btn">СМОТРЕТЬ КЕЙСЫ В TELEGRAM</a>
 </section>
 
 <footer>
