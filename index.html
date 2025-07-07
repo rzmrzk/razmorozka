@@ -9,24 +9,52 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: radial-gradient(ellipse at center, rgba(8,12,10,1) 0%, #000000 100%);
+      background: #000;
       color: #eee;
       overflow-x: hidden;
+      position: relative;
     }
+
+    /* Фоновые свечения */
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(49, 193, 0, 0.3) 0%, transparent 80%);
+      z-index: 0;
+      pointer-events: none;
+      filter: blur(150px);
+    }
+    body::before {
+      top: -200px;
+      left: -200px;
+    }
+    body::after {
+      bottom: -200px;
+      right: -200px;
+    }
+
     header {
+      position: relative;
       text-align: center;
       padding: 30px 20px 20px;
       font-size: 32px;
       font-weight: 700;
       color: #fff;
       letter-spacing: 1px;
+      z-index: 1;
     }
     .hero {
+      position: relative;
       text-align: center;
-      padding: 60px 20px 40px;
+      padding: 80px 20px 40px;
+      z-index: 1;
     }
     .hero h2 {
-      font-size: 42px;
+      font-size: 48px;
       font-weight: 700;
       color: #31C100;
       margin: 0 0 20px;
@@ -47,7 +75,7 @@
       font-weight: 600;
       text-decoration: none;
       transition: all 0.3s ease;
-      box-shadow: 0 8px 20px rgba(49,193,0,0.4);
+      box-shadow: 0 8px 30px rgba(49,193,0,0.4);
       margin: 40px auto;
     }
     .btn:hover {
@@ -55,11 +83,12 @@
       color: #31C100;
       border: 2px solid #31C100;
     }
-
     .section {
+      position: relative;
       max-width: 1200px;
       margin: 0 auto;
       padding: 60px 20px;
+      z-index: 1;
     }
     .section h2 {
       font-size: 32px;
@@ -104,6 +133,7 @@
       display: flex;
       justify-content: center;
       overflow: hidden;
+      z-index: 1;
     }
 
     .review-card {
@@ -112,12 +142,14 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 20px;
       padding: 30px;
-      width: 300px;
-      height: 200px;
+      width: 260px;
+      height: 220px;
       color: #fff;
       margin: 0 20px;
       text-align: center;
-      box-shadow: inset 0 0 20px rgba(49,193,0,0.2), 0 10px 30px rgba(0,0,0,0.5);
+      box-shadow:
+        inset 0 0 30px rgba(49,193,0,0.3),
+        0 10px 30px rgba(0,0,0,0.5);
       position: absolute;
       transition: transform 0.5s ease, opacity 0.5s ease;
       opacity: 0;
@@ -151,6 +183,8 @@
       text-align: center;
       color: #666;
       font-size: 14px;
+      z-index: 1;
+      position: relative;
     }
 
     @media (max-width: 768px) {
@@ -224,7 +258,6 @@
 <script>
   const cards = document.querySelectorAll('.review-card');
   let index = 0;
-
   setInterval(() => {
     cards.forEach(card => card.classList.remove('active'));
     cards[index].classList.add('active');
