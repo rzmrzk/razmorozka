@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Razmorozka</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <style>
     body {
       margin: 0;
@@ -13,6 +14,7 @@
       color: #222;
       line-height: 1.5;
       font-size: 16px;
+      overflow-x: hidden;
     }
     header {
       background: #ffffff;
@@ -104,6 +106,11 @@
       padding: 30px;
       text-align: center;
       box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
     }
     .feature-card img {
       width: 60px;
@@ -112,9 +119,31 @@
     .feature-card h3 {
       font-size: 20px;
       margin-bottom: 10px;
+      color: #28a745;
     }
     .feature-card p {
       color: #555;
+    }
+    .testimonial-card {
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 40px;
+      max-width: 700px;
+      margin: 0 auto;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      text-align: center;
+      font-size: 18px;
+      color: #333;
+    }
+    .testimonial-card p {
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    .testimonial-card span {
+      display: block;
+      margin-top: 10px;
+      font-weight: 600;
+      color: #28a745;
     }
     footer {
       background: #f3fff3;
@@ -143,21 +172,6 @@
       }
     }
   </style>
-
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1040264094919439');
-    fbq('track', 'PageView');
-  </script>
-  <!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -213,6 +227,33 @@
   </div>
 </section>
 
+<!-- Отзывы -->
+<div class="container" style="margin-top: 80px;">
+  <h2 style="text-align: center; font-size: 32px; margin-bottom: 40px; color: #28a745;">Отзывы о нашем Telegram-канале</h2>
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide testimonial-card">
+        <p>«Я долго искал достоверные новости о заморозке активов. Только канал Razmorozka даёт реальные кейсы и пошаговые инструкции. Лучший новостной канал!»</p>
+        <span>- Дмитрий С.</span>
+      </div>
+      <div class="swiper-slide testimonial-card">
+        <p>«В Telegram-канале Razmorozka всё понятно и без воды. Реальные кейсы клиентов дают уверенность. Рекомендую всем, кто столкнулся с санкциями.»</p>
+        <span>- Ольга Н.</span>
+      </div>
+      <div class="swiper-slide testimonial-card">
+        <p>«Отличный канал! Вся актуальная информация по выводу активов из Euroclear собрана в одном месте. Никакого спама — только факты и помощь юристов.»</p>
+        <span>- Сергей Л.</span>
+      </div>
+      <div class="swiper-slide testimonial-card">
+        <p>«Разморозка — лучший телеграм-канал среди всех, которые я читал. Информация достоверная и постоянно обновляется. Спасибо команде за помощь!»</p>
+        <span>- Елена К.</span>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
 <section class="hero" style="padding: 40px 20px;">
   <p style="margin-bottom: 20px; font-size: 18px;">В Telegram вы найдете пошаговые инструкции и реальные истории возврата активов.</p>
   <a href="https://t.me/razmorozkacom" class="btn">СМОТРЕТЬ КЕЙСЫ В TELEGRAM</a>
@@ -221,6 +262,23 @@
 <footer>
   © 2025 Razmorozka. Все права защищены.
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
 
 </body>
 </html>
