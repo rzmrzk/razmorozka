@@ -32,7 +32,6 @@
       bottom: -100px;
       right: -100px;
     }
-
     header {
       position: relative;
       background: transparent;
@@ -62,7 +61,6 @@
       color: #fff;
       text-decoration: underline;
     }
-
     .hero {
       background: transparent;
       text-align: center;
@@ -170,7 +168,6 @@
     .feature-card p {
       color: #ccc;
     }
-
     .testimonial-card {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(40,167,69, 0.2);
@@ -230,14 +227,14 @@
 <header>
   <span id="header-text">Razmorozka</span>
   <div class="lang-switcher">
-    <button data-lang="ru" class="active">RU</button> | 
+    <button data-lang="ru" class="active">RU</button> |
     <button data-lang="en">EN</button>
   </div>
 </header>
 
 <section class="hero">
   <h2 id="hero-title">Верните свои активы из Euroclear</h2>
-  <p id="hero-text">Мы помогаем вернуть доступ к активам в Euroclear законно и официально. Все <span style="color:#28a745; font-weight:600;">актуальные кейсы</span>, инструкции и свежие новости доступны в нашем Telegram-канале.</p>
+  <p id="hero-text">Мы помогаем вернуть доступ к активам в Euroclear законно и официально. Все <span style='color:#28a745; font-weight:600;'>актуальные кейсы</span>, инструкции и свежие новости доступны в нашем Telegram-канале.</p>
 </section>
 
 <div style="text-align:center;">
@@ -251,9 +248,7 @@
     <div class="about-text">
       <p id="about-text-1">Меня зовут <span>Ольга Плеханова</span>. Я эксперт по <span>фондовому рынку США</span> с более чем 8-летним опытом. С 2022 года я помогаю клиентам находить легальные маршруты для <span>свободного и безопасного</span> перемещения капитала.</p>
       <p id="about-text-2">Я сотрудничаю с крупнейшими международными брокерами, страховыми и <span>финтех-компаниями</span>. Являюсь официальным представителем альянса компаний <span>платежных агентов</span>.</p>
-      <p style="margin-top:20px; display: inline-block; border: 2px solid #28a745; padding: 8px 12px; border-radius: 20px; color: #28a745;" id="about-text-3">
-        Верните доступ к своим активам из Euroclear — законно и с гарантией результата.
-      </p>
+      <p style="margin-top:20px; display: inline-block; border: 2px solid #28a745; padding: 8px 12px; border-radius: 20px; color: #28a745;" id="about-text-3">Верните доступ к своим активам из Euroclear — законно и с гарантией результата.</p>
     </div>
   </div>
 </section>
@@ -279,22 +274,11 @@
   </div>
 </section>
 
-<section class="section" style="padding-bottom: 40px;">
+<section class="section">
   <h2 id="reviews-title">Отзывы о нашем Telegram-канале</h2>
   <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide testimonial-card">
-        <p>«Канал Razmorozka оказался лучшим источником информации по теме заморозки активов. Здесь реальные кейсы, пошаговые инструкции и никакой лишней информации.»</p>
-        <span>- Дмитрий С.</span>
-      </div>
-      <div class="swiper-slide testimonial-card">
-        <p>«В Telegram-канале Razmorozka все четко и понятно. Узнала о возможностях вернуть активы из Euroclear. Очень рекомендую!»</p>
-        <span>- Ольга Н.</span>
-      </div>
-      <div class="swiper-slide testimonial-card">
-        <p>«Этот канал реально выделяется на фоне других. Профессионально, юридически грамотно и без воды. Спасибо команде Razmorozka!»</p>
-        <span>- Сергей Л.</span>
-      </div>
+    <div class="swiper-wrapper" id="testimonials-container">
+      <!-- Отзывы вставятся через JS -->
     </div>
     <div class="swiper-pagination"></div>
   </div>
@@ -311,29 +295,58 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-  var swiper = new Swiper(".mySwiper", {
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: "auto",
-    initialSlide: 1,
-    coverflowEffect: {
-      rotate: 30,
-      stretch: 0,
-      depth: 200,
-      modifier: 1,
-      slideShadows: false,
-    },
-    loop: true,
-    autoplay: {
-      delay: 3500,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
+  const testimonials = {
+    ru: [
+      { text: "Канал Razmorozka оказался лучшим источником информации по теме заморозки активов. Здесь реальные кейсы, пошаговые инструкции и никакой лишней информации.", author: "Дмитрий С." },
+      { text: "В Telegram-канале Razmorozka все четко и понятно. Узнала о возможностях вернуть активы из Euroclear. Очень рекомендую!", author: "Ольга Н." },
+      { text: "Этот канал реально выделяется на фоне других. Профессионально, юридически грамотно и без воды. Спасибо команде Razmorozka!", author: "Сергей Л." },
+      { text: "Разморозка — лучший Telegram-канал для тех, кто ищет актуальную информацию о санкциях и способах вернуть свои деньги.", author: "Елена К." },
+      { text: "Очень ценю этот канал за прозрачность информации. Здесь реально помогают людям разобраться с возвратом активов из Euroclear.", author: "Виктор П." }
+    ],
+    en: [
+      { text: "Razmorozka channel turned out to be the best source of information on asset freezes. Real cases, step-by-step instructions, and no unnecessary fluff.", author: "Dmitry S." },
+      { text: "In the Razmorozka Telegram channel everything is clear and understandable. I learned about opportunities to recover assets from Euroclear. Highly recommend!", author: "Olga N." },
+      { text: "This channel truly stands out. Professional, legally competent, and to the point. Thanks to the Razmorozka team!", author: "Sergey L." },
+      { text: "Razmorozka is the best Telegram channel for those seeking up-to-date info on sanctions and ways to recover their funds.", author: "Elena K." },
+      { text: "I really appreciate this channel's transparency. They genuinely help people understand how to recover assets from Euroclear.", author: "Victor P." }
+    ]
+  };
+
+  function renderTestimonials(lang) {
+    const container = document.getElementById('testimonials-container');
+    container.innerHTML = '';
+    testimonials[lang].forEach(item => {
+      const slide = document.createElement('div');
+      slide.className = 'swiper-slide testimonial-card';
+      slide.innerHTML = `<p>«${item.text}»</p><span>- ${item.author}</span>`;
+      container.appendChild(slide);
+    });
+    new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      initialSlide: 2,
+      coverflowEffect: {
+        rotate: 30,
+        stretch: 0,
+        depth: 200,
+        modifier: 1,
+        slideShadows: false,
+      },
+      loop: true,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  }
+
+  renderTestimonials('ru');
 
   const translations = {
     ru: {
@@ -377,6 +390,7 @@
       document.getElementById('hero-bottom-text').textContent = translations[lang].heroBottom;
       document.getElementById('btn-bottom').textContent = translations[lang].btnBottom;
       document.getElementById('footer-text').textContent = translations[lang].footer;
+      renderTestimonials(lang);
     });
   });
 </script>
