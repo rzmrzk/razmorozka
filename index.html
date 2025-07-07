@@ -124,20 +124,25 @@
     .feature-card p {
       color: #555;
     }
+
+    /* Отзывы */
     .testimonial-card {
-      background: #f9f9f9;
-      border-radius: 12px;
-      padding: 40px;
-      max-width: 700px;
+      background: #ffffff;
+      border: 2px solid #28a745;
+      border-radius: 16px;
+      padding: 40px 30px;
+      max-width: 600px;
       margin: 0 auto;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
       text-align: center;
       font-size: 18px;
       color: #333;
+      min-height: 220px;
     }
     .testimonial-card p {
       margin-bottom: 20px;
       font-style: italic;
+      line-height: 1.6;
     }
     .testimonial-card span {
       display: block;
@@ -170,16 +175,13 @@
         width: 140px;
         height: 140px;
       }
+      .testimonial-card {
+        padding: 30px 20px;
+      }
     }
   </style>
 </head>
 <body>
-
-<!-- Noscript Pixel -->
-<noscript>
-  <img height="1" width="1" style="display:none"
-       src="https://www.facebook.com/tr?id=1040264094919439&ev=PageView&noscript=1"/>
-</noscript>
 
 <header>
   Razmorozka
@@ -227,32 +229,41 @@
   </div>
 </section>
 
-<!-- Отзывы -->
-<div class="container" style="margin-top: 80px;">
-  <h2 style="text-align: center; font-size: 32px; margin-bottom: 40px; color: #28a745;">Отзывы о нашем Telegram-канале</h2>
-
+<!-- Блок отзывов -->
+<section class="section" style="padding-bottom: 40px;">
+  <h2>Отзывы о нашем Telegram-канале</h2>
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
+
       <div class="swiper-slide testimonial-card">
-        <p>«Я долго искал достоверные новости о заморозке активов. Только канал Razmorozka даёт реальные кейсы и пошаговые инструкции. Лучший новостной канал!»</p>
+        <p>«Канал Razmorozka оказался лучшим источником информации по теме заморозки активов. Здесь реальные кейсы, пошаговые инструкции и никакой лишней информации.»</p>
         <span>- Дмитрий С.</span>
       </div>
+
       <div class="swiper-slide testimonial-card">
-        <p>«В Telegram-канале Razmorozka всё понятно и без воды. Реальные кейсы клиентов дают уверенность. Рекомендую всем, кто столкнулся с санкциями.»</p>
+        <p>«В Telegram-канале Razmorozka все четко и понятно. Узнала о возможностях вернуть активы из Euroclear. Очень рекомендую!»</p>
         <span>- Ольга Н.</span>
       </div>
+
       <div class="swiper-slide testimonial-card">
-        <p>«Отличный канал! Вся актуальная информация по выводу активов из Euroclear собрана в одном месте. Никакого спама — только факты и помощь юристов.»</p>
+        <p>«Этот канал реально выделяется на фоне других. Профессионально, юридически грамотно и без воды. Спасибо команде Razmorozka!»</p>
         <span>- Сергей Л.</span>
       </div>
+
       <div class="swiper-slide testimonial-card">
-        <p>«Разморозка — лучший телеграм-канал среди всех, которые я читал. Информация достоверная и постоянно обновляется. Спасибо команде за помощь!»</p>
+        <p>«Разморозка — лучший Telegram-канал для тех, кто ищет актуальную информацию о санкциях и способах вернуть свои деньги.»</p>
         <span>- Елена К.</span>
       </div>
+
+      <div class="swiper-slide testimonial-card">
+        <p>«Очень ценю этот канал за прозрачность информации. Здесь реально помогают людям разобраться с возвратом активов из Euroclear.»</p>
+        <span>- Виктор П.</span>
+      </div>
+
     </div>
     <div class="swiper-pagination"></div>
   </div>
-</div>
+</section>
 
 <section class="hero" style="padding: 40px 20px;">
   <p style="margin-bottom: 20px; font-size: 18px;">В Telegram вы найдете пошаговые инструкции и реальные истории возврата активов.</p>
@@ -266,11 +277,21 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
   var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    initialSlide: 2,
+    coverflowEffect: {
+      rotate: 30,
+      stretch: 0,
+      depth: 200,
+      modifier: 1,
+      slideShadows: false,
+    },
     loop: true,
     autoplay: {
-      delay: 3000,
+      delay: 3500,
       disableOnInteraction: false,
     },
     pagination: {
