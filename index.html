@@ -4,243 +4,232 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Razmorozka</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1040264094919439');
-    fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-         src="https://www.facebook.com/tr?id=1040264094919439&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- End Meta Pixel Code -->
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      background: radial-gradient(circle at 30% 30%, rgba(40,167,69,0.25), #0a0a0a 80%);
       font-family: 'Inter', sans-serif;
+      background: radial-gradient(ellipse at center, rgba(8,12,10,1) 0%, #000000 100%);
       color: #eee;
       overflow-x: hidden;
     }
     header {
       text-align: center;
-      font-size: 28px;
-      padding: 30px;
-      color: #28a745;
+      padding: 30px 20px 20px;
+      font-size: 32px;
       font-weight: 700;
+      color: #fff;
       letter-spacing: 1px;
     }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 20px;
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
     }
-    .glass-card {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.2);
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-      border-radius: 20px;
-      padding: 40px;
-      margin-bottom: 50px;
-      box-shadow: 0 0 30px rgba(40, 167, 69, 0.2);
-      position: relative;
-    }
-    .glass-card::before {
-      content: "";
-      position: absolute;
-      top: -1px;
-      left: -1px;
-      right: -1px;
-      bottom: -1px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, rgba(40,167,69,0.4), transparent);
-      opacity: 0.3;
-      pointer-events: none;
-    }
-    .glass-card h2, .glass-card h3 {
-      color: #28a745;
+    .hero h2 {
+      font-size: 42px;
       font-weight: 700;
-      margin-bottom: 20px;
+      color: #31C100;
+      margin: 0 0 20px;
     }
-    .glass-card p {
-      color: #ccc;
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      color: #aaa;
       font-size: 18px;
       line-height: 1.6;
     }
     .btn {
       display: inline-block;
       padding: 16px 32px;
-      background: #28a745;
-      color: #fff;
+      background: linear-gradient(135deg, #31C100, #4dff4d);
+      color: #000;
       border-radius: 40px;
-      text-decoration: none;
       font-weight: 600;
-      font-size: 18px;
-      box-shadow: 0 0 20px rgba(40, 167, 69, 0.5);
+      text-decoration: none;
       transition: all 0.3s ease;
-      margin-top: 30px;
+      box-shadow: 0 8px 20px rgba(49,193,0,0.4);
+      margin: 40px auto;
     }
     .btn:hover {
-      background: #fff;
-      color: #28a745;
-      box-shadow: 0 0 30px rgba(40, 167, 69, 0.8);
+      background: transparent;
+      color: #31C100;
+      border: 2px solid #31C100;
     }
+
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    .section h2 {
+      font-size: 32px;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 40px;
+    }
+
     .about {
       display: flex;
       flex-wrap: wrap;
-      gap: 40px;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      gap: 40px;
+      color: #ccc;
     }
     .about img {
       border-radius: 50%;
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
       object-fit: cover;
-      box-shadow: 0 0 30px rgba(0,0,0,0.5);
+      box-shadow: 0 0 30px rgba(49,193,0,0.4);
     }
     .about-text {
       max-width: 600px;
     }
+    .about-text p {
+      margin-bottom: 14px;
+      font-size: 17px;
+    }
     .about-text span {
-      color: #28a745;
+      color: #31C100;
       font-weight: 600;
     }
-    footer {
+
+    /* Отзывы */
+    .reviews-slider {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 50px auto;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .review-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      width: 300px;
+      height: 200px;
+      color: #fff;
+      margin: 0 20px;
       text-align: center;
-      padding: 40px;
+      box-shadow: inset 0 0 20px rgba(49,193,0,0.2), 0 10px 30px rgba(0,0,0,0.5);
+      position: absolute;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    .review-card.active {
+      opacity: 1;
+      transform: scale(1);
+      z-index: 2;
+    }
+    .reflection {
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+    .reflection::after {
+      content: "";
+      display: block;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(255,255,255,0));
+      transform: scaleY(-1);
+    }
+
+    footer {
+      background: #0d0d0d;
+      padding: 40px 20px;
+      text-align: center;
       color: #666;
       font-size: 14px;
     }
-    /* Swiper styles */
-    .swiper {
-      padding: 50px 0;
-    }
-    .swiper-slide {
-      max-width: 500px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 20px;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      padding: 30px;
-      box-shadow: 0 0 30px rgba(40, 167, 69, 0.2);
-    }
-    .swiper-slide p {
-      color: #eee;
-      font-size: 18px;
-      line-height: 1.6;
-    }
-    .swiper-slide span {
-      color: #28a745;
-      font-weight: 600;
-      display: block;
-      margin-top: 15px;
-      font-size: 16px;
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 28px;
+      }
+      .about {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about img {
+        width: 140px;
+        height: 140px;
+      }
+      .review-card {
+        width: 80%;
+        height: auto;
+      }
     }
   </style>
 </head>
 <body>
 
-<header>Razmorozka</header>
+<header>
+  Razmorozka
+</header>
 
-<div class="container">
+<section class="hero">
+  <h2>Верните свои активы из Euroclear</h2>
+  <p>Мы помогаем вернуть доступ к активам в Euroclear законно и официально. Все <span style="color:#31C100; font-weight:600;">актуальные кейсы</span>, инструкции и свежие новости доступны в нашем Telegram-канале.</p>
+  <a href="https://t.me/razmorozkacom" class="btn">ПОЛУЧИТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ</a>
+</section>
 
-  <!-- Блок Верните активы -->
-  <div class="glass-card">
-    <h2>Верните свои активы из Euroclear</h2>
-    <p>Мы помогаем вернуть доступ к активам в Euroclear законно и официально. Все <span style="color:#28a745; font-weight:600;">актуальные кейсы</span>, инструкции и свежие новости доступны в нашем Telegram-канале.</p>
-    <a href="https://t.me/razmorozkacom" class="btn">ПОЛУЧИТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ</a>
-  </div>
-
-  <!-- Блок Ольги -->
-  <div class="glass-card">
-    <h2>Нам доверяют. Мы работаем официально.</h2>
-    <div class="about">
-      <img src="https://i.postimg.cc/63fH12JZ/image.png" alt="Ольга Плеханова" />
-      <div class="about-text">
-        <p>Меня зовут <span>Ольга Плеханова</span>. Я эксперт по <span>фондовому рынку США</span> с более чем 8-летним опытом. С 2022 года я помогаю клиентам находить легальные маршруты для <span>свободного и безопасного</span> перемещения капитала.</p>
-        <p>Я сотрудничаю с крупнейшими международными брокерами, страховыми и <span>финтех-компаниями</span>. Являюсь официальным представителем альянса компаний <span>платежных агентов</span>.</p>
-        <p style="margin-top:20px; display: inline-block; border: 2px solid #28a745; padding: 8px 12px; border-radius: 20px; color: #28a745;">
-          Верните доступ к своим активам из Euroclear — законно и с гарантией результата.
-        </p>
-      </div>
+<section class="section">
+  <h2>Нам доверяют. Мы работаем официально.</h2>
+  <div class="about">
+    <img src="https://i.postimg.cc/63fH12JZ/image.png" alt="Ольга Плеханова" />
+    <div class="about-text">
+      <p>Меня зовут <span>Ольга Плеханова</span>. Я эксперт по <span>фондовому рынку США</span> с более чем 8-летним опытом. С 2022 года я помогаю клиентам находить легальные маршруты для <span>свободного и безопасного</span> перемещения капитала.</p>
+      <p>Я сотрудничаю с крупнейшими международными брокерами, страховыми и <span>финтех-компаниями</span>. Являюсь официальным представителем альянса компаний <span>платежных агентов</span>.</p>
+      <p style="margin-top:20px; display: inline-block; border: 2px solid #31C100; padding: 8px 12px; border-radius: 20px; color: #31C100;">Верните доступ к своим активам из Euroclear — законно и с гарантией результата.</p>
     </div>
   </div>
+</section>
 
-  <!-- Слайдер отзывов -->
-  <div class="glass-card">
-    <h2>Отзывы о Telegram-канале</h2>
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <p>«Канал Razmorozka — лучший источник информации по заморозке активов. Реальные кейсы и пошаговые инструкции!»</p>
-          <span>- Дмитрий С.</span>
-        </div>
-        <div class="swiper-slide">
-          <p>«Очень понятный канал. Узнала о способах вернуть активы из Euroclear. Рекомендую!»</p>
-          <span>- Ольга Н.</span>
-        </div>
-        <div class="swiper-slide">
-          <p>«Разморозка — единственный канал, которому доверяю. Без воды, всё по делу.»</p>
-          <span>- Сергей Л.</span>
-        </div>
-        <div class="swiper-slide">
-          <p>«Благодаря Razmorozka понял, как действовать пошагово. Эксперты реально помогают!»</p>
-          <span>- Иван П.</span>
-        </div>
-        <div class="swiper-slide">
-          <p>«Чёткий канал. Новости, кейсы и советы — всё в одном месте.»</p>
-          <span>- Наталья М.</span>
-        </div>
-      </div>
-      <div class="swiper-pagination"></div>
+<section class="section">
+  <h2>Отзывы о нашем Telegram-канале</h2>
+  <div class="reviews-slider">
+    <div class="review-card active">
+      <p>«Лучший канал для тех, кто ищет реальные решения и новости о разморозке активов!»</p>
     </div>
-    <div style="text-align:center; margin-top: 30px;">
-      <a href="https://t.me/razmorozkacom" class="btn">СМОТРЕТЬ КЕЙСЫ В TELEGRAM</a>
+    <div class="review-card">
+      <p>«Информация без воды. Чётко, структурированно и со ссылками на документы.»</p>
+    </div>
+    <div class="review-card">
+      <p>«Теперь понимаю, что реально вернуть активы из Euroclear. Спасибо за поддержку!»</p>
+    </div>
+    <div class="review-card">
+      <p>«Всё официально, никаких мошенников. Супер!»</p>
+    </div>
+    <div class="review-card">
+      <p>«Подписался и не пожалел. Новости обновляются быстро, всё актуально.»</p>
     </div>
   </div>
+</section>
 
-</div>
+<footer>
+  © 2025 Razmorozka. Все права защищены.
+</footer>
 
-<footer>© 2025 Razmorozka. Все права защищены.</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-  var swiper = new Swiper(".mySwiper", {
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: "auto",
-    coverflowEffect: {
-      rotate: 30,
-      stretch: 0,
-      depth: 200,
-      modifier: 1,
-      slideShadows: false,
-    },
-    loop: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
+  const cards = document.querySelectorAll('.review-card');
+  let index = 0;
+
+  setInterval(() => {
+    cards.forEach(card => card.classList.remove('active'));
+    cards[index].classList.add('active');
+    index = (index + 1) % cards.length;
+  }, 3000);
 </script>
 
 </body>
