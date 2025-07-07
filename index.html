@@ -309,9 +309,153 @@
         <p id="review2">«В Telegram-канале Razmorozka все четко и понятно. Узнала о возможностях вернуть активы из Euroclear. Очень рекомендую!»</p>
         <span>- Ольга Н.</span>
       </div>
-      <div class="sw
+      <div class="swiper-slide testimonial-card">
+        <p id="review3">«Этот канал реально выделяется на фоне других. Профессионально, юридически грамотно и без воды. Спасибо команде Razmorozka!»</p>
+        <span>- Сергей Л.</span>
+      </div>
+      <div class="swiper-slide testimonial-card">
+        <p id="review4">«Разморозка — лучший Telegram-канал для тех, кто ищет актуальную информацию о санкциях и способах вернуть свои деньги.»</p>
+        <span>- Елена К.</span>
+      </div>
+      <div class="swiper-slide testimonial-card">
+        <p id="review5">«Очень ценю этот канал за прозрачность информации. Здесь реально помогают людям разобраться с возвратом активов из Euroclear.»</p>
+        <span>- Виктор П.</span>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
 
+<section class="hero" style="padding: 40px 20px;">
+  <p id="bottom-cta-text" style="margin-bottom: 20px; font-size: 18px;">В Telegram вы найдете пошаговые инструкции и реальные истории возврата активов.</p>
+  <a href="https://t.me/razmorozkacom" class="btn" id="btn-bottom">СМОТРЕТЬ КЕЙСЫ В TELEGRAM</a>
+</section>
+
+<footer>
+  © 2025 Razmorozka. Все права защищены.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    initialSlide: 2,
+    coverflowEffect: {
+      rotate: 30,
+      stretch: 0,
+      depth: 200,
+      modifier: 1,
+      slideShadows: false,
+    },
+    loop: true,
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+
+  document.getElementById("lang-ru").addEventListener("click", () => {
+    translate("ru");
+    setActiveLang("ru");
+  });
+
+  document.getElementById("lang-en").addEventListener("click", () => {
+    translate("en");
+    setActiveLang("en");
+  });
+
+  function setActiveLang(lang) {
+    document.querySelectorAll(".lang-switcher .lang").forEach(el => el.classList.remove("active"));
+    document.getElementById("lang-" + lang).classList.add("active");
+  }
+
+  const translations = {
+    ru: {
+      heroTitle: "Верните свои активы из Euroclear",
+      heroDesc: "Мы помогаем вернуть доступ к активам в Euroclear законно и официально. Все <span style=\"color:#28a745; font-weight:600;\">актуальные кейсы</span>, инструкции и свежие новости доступны в нашем Telegram-канале.",
+      btnTop: "ПОЛУЧИТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ",
+      trustTitle: "Нам доверяют. Мы работаем официально.",
+      aboutText1: "Меня зовут <span>Ольга Плеханова</span>. Я эксперт по <span>фондовому рынку США</span> с более чем 8-летним опытом. С 2022 года я помогаю клиентам находить легальные маршруты для <span>свободного и безопасного</span> перемещения капитала.",
+      aboutText2: "Я сотрудничаю с крупнейшими международными брокерами, страховыми и <span>финтех-компаниями</span>. Являюсь официальным представителем альянса компаний <span>платежных агентов</span>.",
+      aboutCta: "Верните доступ к своим активам из Euroclear — законно и с гарантией результата.",
+      whyTitle: "Почему выбирают нас",
+      feature1Title: "Юридическая чистота",
+      feature1Text: "Все операции сопровождаются лицензиями и соответствуют законодательству ЕС и США.",
+      feature2Title: "Реальные кейсы",
+      feature2Text: "В Telegram вы найдете истории клиентов, которым уже вернули доступ к их активам в Euroclear.",
+      feature3Title: "Поддержка экспертов",
+      feature3Text: "Юристы и финансовые эксперты помогут вам пройти путь к возврату активов пошагово и безопасно.",
+      reviewsTitle: "Отзывы о нашем Telegram-канале",
+      review1: "«Канал Razmorozka оказался лучшим источником информации по теме заморозки активов. Здесь реальные кейсы, пошаговые инструкции и никакой лишней информации.»",
+      review2: "«В Telegram-канале Razmorozka все четко и понятно. Узнала о возможностях вернуть активы из Euroclear. Очень рекомендую!»",
+      review3: "«Этот канал реально выделяется на фоне других. Профессионально, юридически грамотно и без воды. Спасибо команде Razmorozka!»",
+      review4: "«Разморозка — лучший Telegram-канал для тех, кто ищет актуальную информацию о санкциях и способах вернуть свои деньги.»",
+      review5: "«Очень ценю этот канал за прозрачность информации. Здесь реально помогают людям разобраться с возвратом активов из Euroclear.»",
+      bottomCtaText: "В Telegram вы найдете пошаговые инструкции и реальные истории возврата активов.",
+      btnBottom: "СМОТРЕТЬ КЕЙСЫ В TELEGRAM"
+    },
+    en: {
+      heroTitle: "Recover Your Assets from Euroclear",
+      heroDesc: "We help clients regain access to Euroclear assets legally and officially. All <span style=\"color:#28a745; font-weight:600;\">latest cases</span>, guides, and news are available on our Telegram channel.",
+      btnTop: "GET A FREE CONSULTATION",
+      trustTitle: "Clients Trust Us. We Work Officially.",
+      aboutText1: "My name is <span>Olga Plekhanova</span>. I am a US <span>financial markets expert</span> with over 8 years of experience. Since 2022, I have been helping clients find legal routes for <span>free and secure</span> capital movement.",
+      aboutText2: "I work with major international brokers, insurance and <span>fintech companies</span>. I am the official representative of a union of <span>payment agent companies</span>.",
+      aboutCta: "Regain access to your assets from Euroclear — legally and with guaranteed results.",
+      whyTitle: "Why Choose Us",
+      feature1Title: "Legal Compliance",
+      feature1Text: "All operations are licensed and comply with EU and US legislation.",
+      feature2Title: "Real Cases",
+      feature2Text: "On Telegram you'll find stories of clients who have already regained access to their assets in Euroclear.",
+      feature3Title: "Expert Support",
+      feature3Text: "Legal and financial experts guide you through every step of asset recovery safely.",
+      reviewsTitle: "Reviews of Our Telegram Channel",
+      review1: "\"Razmorozka channel turned out to be the best source of info on asset freezes. Real cases, step-by-step guides, no fluff.\"",
+      review2: "\"Everything is clear and structured in the Razmorozka Telegram channel. Learned how to recover Euroclear assets. Highly recommend!\"",
+      review3: "\"This channel really stands out. Professional, legally correct, and concise. Thanks to the Razmorozka team!\"",
+      review4: "\"Razmorozka is the best Telegram channel for those seeking updates on sanctions and ways to recover their money.\"",
+      review5: "\"I value this channel for its transparency. They truly help people navigate Euroclear asset recovery.\"",
+      bottomCtaText: "In Telegram you'll find step-by-step guides and real stories of asset recovery.",
+      btnBottom: "VIEW CASES IN TELEGRAM"
+    }
+  };
+
+  function translate(lang) {
+    const t = translations[lang];
+    document.getElementById("hero-title").innerHTML = t.heroTitle;
+    document.getElementById("hero-desc").innerHTML = t.heroDesc;
+    document.getElementById("btn-top").innerHTML = t.btnTop;
+    document.getElementById("trust-title").innerHTML = t.trustTitle;
+    document.getElementById("about-text-1").innerHTML = t.aboutText1;
+    document.getElementById("about-text-2").innerHTML = t.aboutText2;
+    document.getElementById("about-cta").innerHTML = t.aboutCta;
+    document.getElementById("why-title").innerHTML = t.whyTitle;
+    document.getElementById("feature1-title").innerHTML = t.feature1Title;
+    document.getElementById("feature1-text").innerHTML = t.feature1Text;
+    document.getElementById("feature2-title").innerHTML = t.feature2Title;
+    document.getElementById("feature2-text").innerHTML = t.feature2Text;
+    document.getElementById("feature3-title").innerHTML = t.feature3Title;
+    document.getElementById("feature3-text").innerHTML = t.feature3Text;
+    document.getElementById("reviews-title").innerHTML = t.reviewsTitle;
+    document.getElementById("review1").innerHTML = t.review1;
+    document.getElementById("review2").innerHTML = t.review2;
+    document.getElementById("review3").innerHTML = t.review3;
+    document.getElementById("review4").innerHTML = t.review4;
+    document.getElementById("review5").innerHTML = t.review5;
+    document.getElementById("bottom-cta-text").innerHTML = t.bottomCtaText;
+    document.getElementById("btn-bottom").innerHTML = t.btnBottom;
+  }
+
+  translate("ru");
+  setActiveLang("ru");
+</script>
 
 </body>
 </html>
-
