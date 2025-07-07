@@ -5,96 +5,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Razmorozka</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       background: #000;
-      color: #eee;
+      color: #f2f2f2;
+      line-height: 1.5;
+      font-size: 16px;
       overflow-x: hidden;
       position: relative;
     }
 
-    /* Мягкие широкие зеленые свечения */
+    /* Зелёные мягкие тени на фоне */
     body::before,
     body::after {
       content: "";
       position: fixed;
-      width: 1200px;
-      height: 1200px;
+      width: 800px;
+      height: 800px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(49, 193, 0, 0.08) 0%, transparent 80%);
+      background: radial-gradient(circle, rgba(40, 167, 69, 0.12) 0%, transparent 70%);
       z-index: 0;
       pointer-events: none;
-      filter: blur(300px);
     }
     body::before {
-      top: -400px;
-      left: -400px;
+      top: -200px;
+      left: -200px;
     }
     body::after {
-      bottom: -400px;
-      right: -400px;
+      bottom: -200px;
+      right: -200px;
     }
 
     header {
-      position: relative;
+      background: transparent;
+      padding: 20px 20px 10px;
       text-align: center;
-      padding: 30px 20px 20px;
-      font-size: 32px;
+      font-size: 28px;
       font-weight: 700;
-      color: #fff;
-      letter-spacing: 1px;
-      z-index: 1;
-    }
-    .hero {
+      color: #ffffff;
+      z-index: 2;
       position: relative;
+    }
+
+    .hero {
+      background: transparent;
       text-align: center;
-      padding: 80px 20px 40px;
-      z-index: 1;
+      padding: 60px 20px 40px;
+      position: relative;
+      z-index: 2;
     }
     .hero h2 {
-      font-size: 48px;
+      font-size: 40px;
       font-weight: 700;
-      color: #31C100;
+      color: #28a745;
       margin: 0 0 20px;
     }
     .hero p {
-      max-width: 700px;
+      max-width: 600px;
       margin: 0 auto 30px;
-      color: #aaa;
+      color: #cccccc;
       font-size: 18px;
-      line-height: 1.6;
     }
+
     .btn {
       display: inline-block;
       padding: 16px 32px;
-      background: linear-gradient(135deg, #31C100, #4dff4d);
-      color: #000;
+      background: #28a745;
+      color: #ffffff;
       border-radius: 40px;
       font-weight: 600;
       text-decoration: none;
       transition: all 0.3s ease;
-      box-shadow: 0 8px 30px rgba(49,193,0,0.4);
+      box-shadow: 0 8px 20px rgba(40, 167, 69, 0.3);
       margin: 40px auto;
     }
     .btn:hover {
-      background: transparent;
-      color: #31C100;
-      border: 2px solid #31C100;
+      background: #ffffff;
+      color: #28a745;
+      border: 2px solid #28a745;
     }
+
     .section {
-      position: relative;
+      padding: 20px 20px 60px;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 60px 20px;
-      z-index: 1;
+      position: relative;
+      z-index: 2;
     }
+
     .section h2 {
       font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 20px;
       text-align: center;
-      color: #fff;
-      margin-bottom: 40px;
+      color: #ffffff;
     }
 
     .about {
@@ -103,159 +110,95 @@
       justify-content: center;
       align-items: center;
       gap: 40px;
-      color: #ccc;
     }
+
     .about img {
       border-radius: 50%;
-      width: 180px;
-      height: 180px;
+      width: 200px;
+      height: 200px;
       object-fit: cover;
-      box-shadow: 0 0 30px rgba(49,193,0,0.4);
+      box-shadow: 0 8px 20px rgba(40, 167, 69, 0.4);
     }
+
     .about-text {
       max-width: 600px;
     }
+
     .about-text p {
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       font-size: 17px;
+      color: #e0e0e0;
     }
+
     .about-text span {
-      color: #31C100;
+      color: #28a745;
       font-weight: 600;
     }
 
-    /* Отзывы - стеклянные карточки */
-    .reviews-slider-wrapper {
-      position: relative;
-      height: 350px;
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
       margin-top: 40px;
     }
-    .reviews-slider {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(40, 167, 69, 0.2);
+      transition: all 0.3s ease;
+      color: #ffffff;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(40, 167, 69, 0.4);
+    }
+    .feature-card img {
+      width: 60px;
+      margin-bottom: 20px;
+    }
+    .feature-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #28a745;
+    }
+    .feature-card p {
+      color: #cccccc;
     }
 
-    .review-card {
-      background: rgba(255, 255, 255, 0.07);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 20px;
-      padding: 30px;
-      width: 320px;
-      height: 220px;
-      color: #fff;
+    /* Отзывы */
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(40, 167, 69, 0.4);
+      border-radius: 16px;
+      padding: 40px 30px;
+      max-width: 600px;
+      margin: 0 auto;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
       text-align: center;
-      box-shadow:
-        inset 0 0 20px rgba(255,255,255,0.2),
-        0 10px 30px rgba(0,0,0,0.5);
-      position: absolute;
-      transition: transform 0.5s ease, opacity 0.5s ease;
-      opacity: 0;
-      transform: scale(0.8);
-      background-image: linear-gradient(160deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 50%);
+      font-size: 18px;
+      color: #ffffff;
+      min-height: 220px;
     }
-    .review-card.active {
-      opacity: 1;
-      transform: scale(1);
-      z-index: 2;
+
+    .testimonial-card p {
+      margin-bottom: 20px;
+      font-style: italic;
+      line-height: 1.6;
+    }
+    .testimonial-card span {
+      display: block;
+      margin-top: 10px;
+      font-weight: 600;
+      color: #28a745;
     }
 
     footer {
-      background: #0d0d0d;
+      background: rgba(255, 255, 255, 0.05);
       padding: 40px 20px;
       text-align: center;
-      color: #666;
+      color: #888888;
       font-size: 14px;
-      z-index: 1;
-      position: relative;
-    }
-
-    @media (max-width: 768px) {
-      .hero h2 {
-        font-size: 28px;
-      }
-      .about {
-        flex-direction: column;
-        text-align: center;
-      }
-      .about img {
-        width: 140px;
-        height: 140px;
-      }
-      .review-card {
-        width: 80%;
-        height: auto;
-      }
-    }
-  </style>
-</head>
-<body>
-
-<header>
-  Razmorozka
-</header>
-
-<section class="hero">
-  <h2>Верните свои активы из Euroclear</h2>
-  <p>Мы помогаем вернуть доступ к активам в Euroclear законно и официально. Все <span style="color:#31C100; font-weight:600;">актуальные кейсы</span>, инструкции и свежие новости доступны в нашем Telegram-канале.</p>
-  <a href="https://t.me/razmorozkacom" class="btn">ПОЛУЧИТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ</a>
-</section>
-
-<section class="section">
-  <h2>Нам доверяют. Мы работаем официально.</h2>
-  <div class="about">
-    <img src="https://i.postimg.cc/63fH12JZ/image.png" alt="Ольга Плеханова" />
-    <div class="about-text">
-      <p>Меня зовут <span>Ольга Плеханова</span>. Я эксперт по <span>фондовому рынку США</span> с более чем 8-летним опытом. С 2022 года я помогаю клиентам находить легальные маршруты для <span>свободного и безопасного</span> перемещения капитала.</p>
-      <p>Я сотрудничаю с крупнейшими международными брокерами, страховыми и <span>финтех-компаниями</span>. Являюсь официальным представителем альянса компаний <span>платежных агентов</span>.</p>
-      <p style="margin-top:20px; display: inline-block; border: 2px solid #31C100; padding: 8px 12px; border-radius: 20px; color: #31C100;">Верните доступ к своим активам из Euroclear — законно и с гарантией результата.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <h2>Отзывы о нашем Telegram-канале</h2>
-  <div class="reviews-slider-wrapper">
-    <div class="reviews-slider">
-      <div class="review-card active">
-        <p>«Лучший канал для тех, кто ищет реальные решения и новости о разморозке активов!»</p>
-      </div>
-      <div class="review-card">
-        <p>«Информация без воды. Чётко, структурированно и со ссылками на документы.»</p>
-      </div>
-      <div class="review-card">
-        <p>«Теперь понимаю, что реально вернуть активы из Euroclear. Спасибо за поддержку!»</p>
-      </div>
-      <div class="review-card">
-        <p>«Всё официально, никаких мошенников. Супер!»</p>
-      </div>
-      <div class="review-card">
-        <p>«Подписался и не пожалел. Новости обновляются быстро, всё актуально.»</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  © 2025 Razmorozka. Все права защищены.
-</footer>
-
-<script>
-  const cards = document.querySelectorAll('.review-card');
-  let index = 0;
-  setInterval(() => {
-    cards.forEach(card => card.classList.remove('active'));
-    cards[index].classList.add('active');
-    index = (index + 1) % cards.length;
-  }, 3000);
-</script>
-
-</body>
-</html>
