@@ -361,7 +361,7 @@
     document.getElementById("lang-" + lang).classList.add("active");
   }
 
-  // Трекер кликов на кнопки
+  // Track button clicks
   document.getElementById("btn-top").addEventListener("click", () => {
     fbq('track', 'Lead');
   });
@@ -369,9 +369,55 @@
     fbq('track', 'Lead');
   });
 
-  // Твой перевод остался без изменений, сохранил
   const translations = {
-    // (оставил без изменений - подставь сюда свои переводы)
+    ru: {
+      heroTitle: "Верните свои активы из Euroclear",
+      heroDesc: "Мы помогаем вернуть доступ к активам в Euroclear законно и официально. Все <span style=\"color:#28a745; font-weight:600;\">актуальные кейсы</span>, инструкции и свежие новости доступны в нашем Telegram-канале.",
+      btnTop: "ПОЛУЧИТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ",
+      trustTitle: "Нам доверяют. Мы работаем официально.",
+      aboutText1: "Меня зовут <span>Ольга Плеханова</span>. Я эксперт по <span>фондовому рынку США</span> с более чем 8-летним опытом. С 2022 года я помогаю клиентам находить легальные маршруты для <span>свободного и безопасного</span> перемещения капитала.",
+      aboutText2: "Я сотрудничаю с крупнейшими международными брокерами, страховыми и <span>финтех-компаниями</span>. Являюсь официальным представителем альянса компаний <span>платежных агентов</span>.",
+      aboutCta: "Верните доступ к своим активам из Euroclear — законно и с гарантией результата.",
+      whyTitle: "Почему выбирают нас",
+      feature1Title: "Юридическая чистота",
+      feature1Text: "Все операции сопровождаются лицензиями и соответствуют законодательству ЕС и США.",
+      feature2Title: "Реальные кейсы",
+      feature2Text: "В Telegram вы найдете истории клиентов, которым уже вернули доступ к их активам в Euroclear.",
+      feature3Title: "Поддержка экспертов",
+      feature3Text: "Юристы и финансовые эксперты помогут вам пройти путь к возврату активов пошагово и безопасно.",
+      reviewsTitle: "Отзывы о нашем Telegram-канале",
+      review1: "«Канал Razmorozka оказался лучшим источником информации по теме заморозки активов. Здесь реальные кейсы, пошаговые инструкции и никакой лишней информации.»",
+      review2: "«В Telegram-канале Razmorozka все четко и понятно. Узнала о возможностях вернуть активы из Euroclear. Очень рекомендую!»",
+      review3: "«Этот канал реально выделяется на фоне других. Профессионально, юридически грамотно и без воды. Спасибо команде Razmorozka!»",
+      review4: "«Разморозка — лучший Telegram-канал для тех, кто ищет актуальную информацию о санкциях и способах вернуть свои деньги.»",
+      review5: "«Очень ценю этот канал за прозрачность информации. Здесь реально помогают людям разобраться с возвратом активов из Euroclear.»",
+      bottomCtaText: "В Telegram вы найдете пошаговые инструкции и реальные истории возврата активов.",
+      btnBottom: "СМОТРЕТЬ КЕЙСЫ В TELEGRAM"
+    },
+    en: {
+      heroTitle: "Recover Your Assets from Euroclear",
+      heroDesc: "We help you regain access to Euroclear assets legally and officially. All <span style=\"color:#28a745; font-weight:600;\">up-to-date cases</span>, instructions and news are available in our Telegram channel.",
+      btnTop: "GET A FREE CONSULTATION",
+      trustTitle: "Trusted. We Work Officially.",
+      aboutText1: "My name is <span>Olga Plekhanova</span>. I am a US stock market expert with over 8 years of experience. Since 2022, I have been helping clients find legal routes for <span>safe and free</span> capital movement.",
+      aboutText2: "I work with major international brokers, insurance and <span>fintech companies</span>. I am the official representative of a union of <span>payment agent companies</span>.",
+      aboutCta: "Regain access to your assets from Euroclear — legally and with guaranteed results.",
+      whyTitle: "Why Choose Us",
+      feature1Title: "Legal Compliance",
+      feature1Text: "All operations are licensed and comply with EU and US legislation.",
+      feature2Title: "Real Cases",
+      feature2Text: "On Telegram you'll find stories of clients who have already regained access to their assets in Euroclear.",
+      feature3Title: "Expert Support",
+      feature3Text: "Legal and financial experts guide you through every step of asset recovery safely.",
+      reviewsTitle: "Reviews of Our Telegram Channel",
+      review1: "\"Razmorozka channel turned out to be the best source of info on asset freezes. Real cases, step-by-step guides, no fluff.\"",
+      review2: "\"Everything is clear and structured in the Razmorozka Telegram channel. Learned how to recover Euroclear assets. Highly recommend!\"",
+      review3: "\"This channel really stands out. Professional, legally correct, and concise. Thanks to the Razmorozka team!\"",
+      review4: "\"Razmorozka is the best Telegram channel for those seeking updates on sanctions and ways to recover their money.\"",
+      review5: "\"I value this channel for its transparency. They truly help people navigate Euroclear asset recovery.\"",
+      bottomCtaText: "In Telegram you'll find step-by-step guides and real stories of asset recovery.",
+      btnBottom: "VIEW CASES IN TELEGRAM"
+    }
   };
 
   function translate(lang) {
