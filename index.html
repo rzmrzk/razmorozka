@@ -313,4 +313,23 @@
     document.getElementById("about-title").textContent = translations[lang].aboutTitle;
     document.getElementById("about-text").innerHTML = translations[lang].aboutText;
     document.getElementById("features-title").textContent = translations[lang].featuresTitle;
-    document.getElementById("feat1-title
+    document.getElementById("feat1-title").textContent = translations[lang].feat1Title;
+    document.getElementById("feat1-text").textContent = translations[lang].feat1Text;
+    document.getElementById("feat2-title").textContent = translations[lang].feat2Title;
+    document.getElementById("feat2-text").textContent = translations[lang].feat2Text;
+    document.getElementById("feat3-title").textContent = translations[lang].feat3Title;
+    document.getElementById("feat3-text").textContent = translations[lang].feat3Text;
+    document.getElementById("reviews-title").textContent = translations[lang].reviewsTitle;
+    document.getElementById("bottom-text").textContent = translations[lang].bottomText;
+    document.getElementById("bottom-btn").textContent = translations[lang].bottomBtn;
+    document.getElementById("footer-text").textContent = translations[lang].footer;
+    renderTestimonials(lang);
+  }
+
+  langSelector.addEventListener("change", e => translate(e.target.value));
+  translate("ru");
+</script>
+
+</body>
+</html>
+
