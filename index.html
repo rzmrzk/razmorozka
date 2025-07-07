@@ -5,60 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Razmorozka</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       background: #000;
-      color: #f2f2f2;
-      line-height: 1.5;
-      font-size: 16px;
+      color: #fff;
       overflow-x: hidden;
       position: relative;
     }
-    /* Мягкие зеленые тени */
-    body::before,
-    body::after {
+    body::before, body::after {
       content: "";
-      position: fixed;
+      position: absolute;
+      width: 400px;
+      height: 400px;
       border-radius: 50%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(40,167,69,0.12) 0%, transparent 80%);
+      background: radial-gradient(circle, rgba(40,167,69,0.15) 0%, transparent 80%);
       z-index: 0;
-      filter: blur(120px);
-      pointer-events: none;
     }
     body::before {
       top: -100px;
-      left: -150px;
+      left: -100px;
     }
     body::after {
-      bottom: -150px;
+      bottom: -100px;
       right: -100px;
     }
 
     header {
       position: relative;
+      background: transparent;
+      padding: 20px;
       text-align: center;
-      padding: 30px 20px 10px;
-      font-size: 32px;
+      font-size: 28px;
       font-weight: 700;
       color: #28a745;
       z-index: 1;
     }
+    .lang-switcher {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 14px;
+    }
+    .lang-switcher button {
+      background: none;
+      border: none;
+      color: #28a745;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      margin: 0 4px;
+    }
+    .lang-switcher button.active {
+      color: #fff;
+      text-decoration: underline;
+    }
 
     .hero {
-      position: relative;
+      background: transparent;
       text-align: center;
-      padding: 80px 20px 50px;
-      max-width: 1000px;
-      margin: 0 auto;
+      padding: 60px 20px 40px;
+      position: relative;
       z-index: 1;
     }
     .hero h2 {
-      font-size: 42px;
+      font-size: 40px;
       font-weight: 700;
       color: #28a745;
       margin: 0 0 20px;
@@ -67,7 +80,7 @@
       max-width: 700px;
       margin: 0 auto 30px;
       color: #ddd;
-      font-size: 20px;
+      font-size: 18px;
     }
     .btn {
       display: inline-block;
@@ -78,7 +91,7 @@
       font-weight: 600;
       text-decoration: none;
       transition: all 0.3s ease;
-      box-shadow: 0 8px 20px rgba(40, 167, 69, 0.4);
+      box-shadow: 0 8px 20px rgba(40, 167, 69, 0.3);
       margin: 40px auto;
     }
     .btn:hover {
@@ -87,10 +100,10 @@
       border: 2px solid #28a745;
     }
     .section {
-      position: relative;
       padding: 60px 20px;
       max-width: 1200px;
       margin: 0 auto;
+      position: relative;
       z-index: 1;
     }
     .section h2 {
@@ -98,7 +111,7 @@
       font-weight: 700;
       margin-bottom: 40px;
       text-align: center;
-      color: #fff;
+      color: #28a745;
     }
     .about {
       display: flex;
@@ -106,33 +119,25 @@
       justify-content: center;
       align-items: center;
       gap: 40px;
+      color: #ddd;
     }
     .about img {
       border-radius: 50%;
       width: 200px;
       height: 200px;
       object-fit: cover;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
     .about-text {
       max-width: 600px;
     }
     .about-text p {
       margin-bottom: 16px;
-      font-size: 18px;
-      color: #ccc;
+      font-size: 17px;
     }
     .about-text span {
       color: #28a745;
       font-weight: 600;
-    }
-    .about-text .highlight {
-      display: inline-block;
-      border: 2px solid #28a745;
-      padding: 8px 12px;
-      border-radius: 20px;
-      color: #28a745;
-      margin-top: 20px;
     }
     .features {
       display: grid;
@@ -141,45 +146,44 @@
       margin-top: 40px;
     }
     .feature-card {
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(8px);
-      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
       padding: 30px;
       text-align: center;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
       transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
     }
     .feature-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 50px rgba(0,0,0,0.5);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
     }
     .feature-card img {
       width: 60px;
       margin-bottom: 20px;
-      filter: brightness(1.5);
     }
     .feature-card h3 {
-      font-size: 22px;
-      margin-bottom: 12px;
+      font-size: 20px;
+      margin-bottom: 10px;
       color: #28a745;
     }
     .feature-card p {
       color: #ccc;
     }
-    /* Отзывы */
-    .swiper-slide.testimonial-card {
-      background: rgba(255,255,255,0.06);
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(40,167,69, 0.2);
       border-radius: 16px;
       padding: 40px 30px;
       max-width: 600px;
       margin: 0 auto;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      box-shadow: inset 0 0 50px rgba(255,255,255,0.05);
       text-align: center;
       font-size: 18px;
       color: #eee;
       min-height: 220px;
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(40,167,69,0.3);
+      backdrop-filter: blur(8px);
     }
     .testimonial-card p {
       margin-bottom: 20px;
@@ -193,16 +197,14 @@
       color: #28a745;
     }
     footer {
-      background: rgba(40,167,69,0.05);
+      background: rgba(255,255,255,0.05);
       padding: 40px 20px;
       text-align: center;
-      color: #777;
+      color: #888;
       font-size: 14px;
+      backdrop-filter: blur(5px);
     }
     @media (max-width: 768px) {
-      header {
-        font-size: 24px;
-      }
       .hero h2 {
         font-size: 28px;
       }
@@ -226,92 +228,84 @@
 <body>
 
 <header>
-  Razmorozka
+  <span id="header-text">Razmorozka</span>
+  <div class="lang-switcher">
+    <button data-lang="ru" class="active">RU</button> | 
+    <button data-lang="en">EN</button>
+  </div>
 </header>
 
 <section class="hero">
-  <h2>Верните свои активы из Euroclear</h2>
-  <p>Мы помогаем вернуть доступ к активам в Euroclear законно и официально. Все <span style="color:#28a745; font-weight:600;">актуальные кейсы</span>, инструкции и свежие новости доступны в нашем Telegram-канале.</p>
+  <h2 id="hero-title">Верните свои активы из Euroclear</h2>
+  <p id="hero-text">Мы помогаем вернуть доступ к активам в Euroclear законно и официально. Все <span style="color:#28a745; font-weight:600;">актуальные кейсы</span>, инструкции и свежие новости доступны в нашем Telegram-канале.</p>
 </section>
 
 <div style="text-align:center;">
-  <a href="https://t.me/razmorozkacom" class="btn">ПОЛУЧИТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ</a>
+  <a href="https://t.me/razmorozkacom" class="btn" id="btn-consult">ПОЛУЧИТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ</a>
 </div>
 
 <section class="section">
-  <h2>Нам доверяют. Мы работаем официально.</h2>
+  <h2 id="trust-title">Нам доверяют. Мы работаем официально.</h2>
   <div class="about">
     <img src="https://i.postimg.cc/63fH12JZ/image.png" alt="Ольга Плеханова" />
     <div class="about-text">
-      <p>Меня зовут <span>Ольга Плеханова</span>. Я эксперт по <span>фондовому рынку США</span> с более чем 8-летним опытом. С 2022 года я помогаю клиентам находить легальные маршруты для <span>свободного и безопасного</span> перемещения капитала.</p>
-      <p>Я сотрудничаю с крупнейшими международными брокерами, страховыми и <span>финтех-компаниями</span>. Являюсь официальным представителем альянса компаний <span>платежных агентов</span>.</p>
-      <p class="highlight">Верните доступ к своим активам из Euroclear — законно и с гарантией результата.</p>
+      <p id="about-text-1">Меня зовут <span>Ольга Плеханова</span>. Я эксперт по <span>фондовому рынку США</span> с более чем 8-летним опытом. С 2022 года я помогаю клиентам находить легальные маршруты для <span>свободного и безопасного</span> перемещения капитала.</p>
+      <p id="about-text-2">Я сотрудничаю с крупнейшими международными брокерами, страховыми и <span>финтех-компаниями</span>. Являюсь официальным представителем альянса компаний <span>платежных агентов</span>.</p>
+      <p style="margin-top:20px; display: inline-block; border: 2px solid #28a745; padding: 8px 12px; border-radius: 20px; color: #28a745;" id="about-text-3">
+        Верните доступ к своим активам из Euroclear — законно и с гарантией результата.
+      </p>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <h2>Почему выбирают нас</h2>
+  <h2 id="why-us-title">Почему выбирают нас</h2>
   <div class="features">
     <div class="feature-card">
       <img src="https://cdn-icons-png.flaticon.com/512/2910/2910768.png" alt="Юридическая чистота" />
-      <h3>Юридическая чистота</h3>
-      <p>Все операции сопровождаются лицензиями и соответствуют законодательству ЕС и США.</p>
+      <h3 id="feature-1-title">Юридическая чистота</h3>
+      <p id="feature-1-text">Все операции сопровождаются лицензиями и соответствуют законодательству ЕС и США.</p>
     </div>
     <div class="feature-card">
       <img src="https://cdn-icons-png.flaticon.com/512/2910/2910771.png" alt="Реальные кейсы" />
-      <h3>Реальные кейсы</h3>
-      <p>В Telegram вы найдете истории клиентов, которым уже вернули доступ к их активам в Euroclear.</p>
+      <h3 id="feature-2-title">Реальные кейсы</h3>
+      <p id="feature-2-text">В Telegram вы найдете истории клиентов, которым уже вернули доступ к их активам в Euroclear.</p>
     </div>
     <div class="feature-card">
       <img src="https://cdn-icons-png.flaticon.com/512/2910/2910770.png" alt="Поддержка экспертов" />
-      <h3>Поддержка экспертов</h3>
-      <p>Юристы и финансовые эксперты помогут вам пройти путь к возврату активов пошагово и безопасно.</p>
+      <h3 id="feature-3-title">Поддержка экспертов</h3>
+      <p id="feature-3-text">Юристы и финансовые эксперты помогут вам пройти путь к возврату активов пошагово и безопасно.</p>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <h2>Отзывы о нашем Telegram-канале</h2>
+<section class="section" style="padding-bottom: 40px;">
+  <h2 id="reviews-title">Отзывы о нашем Telegram-канале</h2>
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
-
       <div class="swiper-slide testimonial-card">
         <p>«Канал Razmorozka оказался лучшим источником информации по теме заморозки активов. Здесь реальные кейсы, пошаговые инструкции и никакой лишней информации.»</p>
         <span>- Дмитрий С.</span>
       </div>
-
       <div class="swiper-slide testimonial-card">
-        <p>«В Telegram-канале Razmorozka всё четко и понятно. Узнала о возможностях вернуть активы из Euroclear. Очень рекомендую!»</p>
+        <p>«В Telegram-канале Razmorozka все четко и понятно. Узнала о возможностях вернуть активы из Euroclear. Очень рекомендую!»</p>
         <span>- Ольга Н.</span>
       </div>
-
       <div class="swiper-slide testimonial-card">
         <p>«Этот канал реально выделяется на фоне других. Профессионально, юридически грамотно и без воды. Спасибо команде Razmorozka!»</p>
         <span>- Сергей Л.</span>
       </div>
-
-      <div class="swiper-slide testimonial-card">
-        <p>«Разморозка — лучший Telegram-канал для тех, кто ищет актуальную информацию о санкциях и способах вернуть свои деньги.»</p>
-        <span>- Елена К.</span>
-      </div>
-
-      <div class="swiper-slide testimonial-card">
-        <p>«Очень ценю этот канал за прозрачность информации. Здесь реально помогают людям разобраться с возвратом активов из Euroclear.»</p>
-        <span>- Виктор П.</span>
-      </div>
-
     </div>
     <div class="swiper-pagination"></div>
   </div>
 </section>
 
 <section class="hero" style="padding: 40px 20px;">
-  <p style="margin-bottom: 20px; font-size: 18px;">В Telegram вы найдете пошаговые инструкции и реальные истории возврата активов.</p>
-  <a href="https://t.me/razmorozkacom" class="btn">СМОТРЕТЬ КЕЙСЫ В TELEGRAM</a>
+  <p style="margin-bottom: 20px; font-size: 18px;" id="hero-bottom-text">В Telegram вы найдете пошаговые инструкции и реальные истории возврата активов.</p>
+  <a href="https://t.me/razmorozkacom" class="btn" id="btn-bottom">СМОТРЕТЬ КЕЙСЫ В TELEGRAM</a>
 </section>
 
-<footer>
+<footer id="footer-text">
   © 2025 Razmorozka. Все права защищены.
 </footer>
 
@@ -322,7 +316,7 @@
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: "auto",
-    initialSlide: 2,
+    initialSlide: 1,
     coverflowEffect: {
       rotate: 30,
       stretch: 0,
@@ -339,6 +333,51 @@
       el: ".swiper-pagination",
       clickable: true,
     },
+  });
+
+  const translations = {
+    ru: {
+      header: "Razmorozka",
+      heroTitle: "Верните свои активы из Euroclear",
+      heroText: "Мы помогаем вернуть доступ к активам в Euroclear законно и официально. Все <span style='color:#28a745; font-weight:600;'>актуальные кейсы</span>, инструкции и свежие новости доступны в нашем Telegram-канале.",
+      btnConsult: "ПОЛУЧИТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ",
+      trustTitle: "Нам доверяют. Мы работаем официально.",
+      whyUsTitle: "Почему выбирают нас",
+      reviewsTitle: "Отзывы о нашем Telegram-канале",
+      footer: "© 2025 Razmorozka. Все права защищены.",
+      heroBottom: "В Telegram вы найдете пошаговые инструкции и реальные истории возврата активов.",
+      btnBottom: "СМОТРЕТЬ КЕЙСЫ В TELEGRAM"
+    },
+    en: {
+      header: "Razmorozka",
+      heroTitle: "Recover Your Assets from Euroclear",
+      heroText: "We help recover access to assets in Euroclear legally and officially. All <span style='color:#28a745; font-weight:600;'>actual cases</span>, instructions, and fresh news are available in our Telegram channel.",
+      btnConsult: "GET A FREE CONSULTATION",
+      trustTitle: "Clients Trust Us. We Work Officially.",
+      whyUsTitle: "Why Choose Us",
+      reviewsTitle: "Reviews about Our Telegram Channel",
+      footer: "© 2025 Razmorozka. All rights reserved.",
+      heroBottom: "In Telegram, you will find step-by-step instructions and real asset return stories.",
+      btnBottom: "VIEW CASES IN TELEGRAM"
+    }
+  };
+
+  document.querySelectorAll('.lang-switcher button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      let lang = btn.dataset.lang;
+      document.querySelectorAll('.lang-switcher button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('header-text').textContent = translations[lang].header;
+      document.getElementById('hero-title').textContent = translations[lang].heroTitle;
+      document.getElementById('hero-text').innerHTML = translations[lang].heroText;
+      document.getElementById('btn-consult').textContent = translations[lang].btnConsult;
+      document.getElementById('trust-title').textContent = translations[lang].trustTitle;
+      document.getElementById('why-us-title').textContent = translations[lang].whyUsTitle;
+      document.getElementById('reviews-title').textContent = translations[lang].reviewsTitle;
+      document.getElementById('hero-bottom-text').textContent = translations[lang].heroBottom;
+      document.getElementById('btn-bottom').textContent = translations[lang].btnBottom;
+      document.getElementById('footer-text').textContent = translations[lang].footer;
+    });
   });
 </script>
 
